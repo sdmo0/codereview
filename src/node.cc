@@ -3,43 +3,43 @@
 #include "node.h"
 
 Node::Node(char data) {
-  _data = data;
-  _previous = nullptr;
-  _next = nullptr;
-  return;
+	_data = data;
+	_previous = nullptr;
+	_next = nullptr;
+	return;
 }
 
 char Node::GetData() {
-  return _data;
+	return _data;
 }
 
 Node* Node::GetPreviousNode() {
-  return _previous;
+	return _previous;
 }
 
 Node* Node::GetNextNode() {
-  return _next;
+	return _next;
 }
 
 void Node::SetNextNode(Node *next) {
-  _next = next;
+	_next = next;
 }
 void Node::SetPreviousNode(Node *prev) {
-  _previous = prev;
+	_previous = prev;
 }
 
 
 Node* Node::InsertPreviousNode(char data) {
-  Node *node_ = new Node(data);
-  if (_previous) {
-	  _previous->SetNextNode(node_);
-  }
+	Node *node_ = new Node(data);
+	if (_previous) {
+		_previous->SetNextNode(node_);
+	}
 
-  node_->SetNextNode(this);
-  node_->SetPreviousNode(_previous);
-  _previous = node_;
+	node_->SetNextNode(this);
+	node_->SetPreviousNode(_previous);
+	_previous = node_;
 
-  return node_;
+	return node_;
 }
 
 Node* Node::InsertNextNode(char data) {
@@ -56,29 +56,29 @@ Node* Node::InsertNextNode(char data) {
 }
 
 bool Node::ErasePreviousNode() {
-  if (nullptr == _previous) return false;
+	if (nullptr == _previous) return false;
 
-  Node *node_ = _previous;
+	Node *node_ = _previous;
 
-  _previous = node_->GetPreviousNode();
-  if (_previous) {
-	 _previous->SetNextNode(this);
-  }
+	_previous = node_->GetPreviousNode();
+	if (_previous) {
+		_previous->SetNextNode(this);
+	}
 
-  delete node_;
-  return true;
+	delete node_;
+	return true;
 }
 
 bool Node::EraseNextNode() {
-  if (nullptr == _next) return false;
+	if (nullptr == _next) return false;
 
-  Node *node_ = _next;
+	Node *node_ = _next;
   
-  _next = node_->GetNextNode();
-  if (_next) {
-    _next->SetPreviousNode(this);
-  }
+	_next = node_->GetNextNode();
+	if (_next) {
+		_next->SetPreviousNode(this);
+	}
 
-  delete node_;
-  return true;
+	delete node_;
+	return true;
 }
