@@ -13,6 +13,14 @@ class Node {
   Node* GetNextNode();
   bool ErasePreviousNode();
   bool EraseNextNode();
+
+  void SetNextNode(Node *next);
+  void SetPreviousNode(Node *prev);
+  
+private:
+  char _data;
+  Node *_previous;
+  Node *_next;
 };
 
 #endif  // NODE_H_
