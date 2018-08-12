@@ -9,7 +9,8 @@ TypingMachine::TypingMachine() {
 	_tail = nullptr;
 	_cur = nullptr;
 	_string_count = 0;
-	TypeKey(' ');
+	_cur = _head = _tail = new Node(' ');
+
 	return;
 }
 
