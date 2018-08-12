@@ -5,10 +5,11 @@
 const int MAX_STRING = 100;
 
 TypingMachine::TypingMachine() {
-	Node *_head = nullptr;
-	Node *_tail = nullptr;
-	Node *_cur = nullptr;
-	int _string_count = 0;
+	_head = nullptr;
+	_tail = nullptr;
+	_cur = nullptr;
+	_string_count = 0;
+	TypeKey(' ');
 	return;
 }
 
@@ -65,7 +66,7 @@ bool TypingMachine::EraseKey() {
 }
 
 std::string TypingMachine::Print(char separator) {
-	std::string str_(" ");
+	std::string str_("");
 
 	Node *idx_ = nullptr;
 
