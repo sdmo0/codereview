@@ -3,6 +3,8 @@
 #ifndef NODE_H_
 #define NODE_H_
 
+#define ORIGINAL_CODE 1
+
 class Node {
 	public:
 	explicit Node(char data);
