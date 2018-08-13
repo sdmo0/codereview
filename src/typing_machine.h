@@ -10,6 +10,7 @@
 class TypingMachine {
 	public:
 	TypingMachine();
+	~TypingMachine();
 	void HomeKey();
 	void EndKey();
 	void LeftKey();
@@ -18,7 +19,7 @@ class TypingMachine {
 	bool EraseKey();
 	std::string Print(char separator);
 
-private:
+	private:
 	Node *_head;
 	Node *_tail;
 	Node *_cur;

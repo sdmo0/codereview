@@ -5,14 +5,24 @@
 const int MAX_STRING = 100;
 
 TypingMachine::TypingMachine() {
-	_head = nullptr;
-	_tail = nullptr;
-	_cur = nullptr;
 	_string_count = 0;
 	_cur = _head = _tail = new Node(' ');
 
 	return;
 }
+
+TypingMachine::~TypingMachine() {
+	Node *idx_ = _head;
+
+	while (idx_ != nullptr && idx_->GetNextNode() != nullptr) {
+		idx_->EraseNextNode();
+	}
+
+	delete _head;
+
+	return;
+}
+
 
 void TypingMachine::HomeKey() {
 	_cur = _head;
@@ -71,9 +81,13 @@ std::string TypingMachine::Print(char separator) {
 
 	Node *idx_ = nullptr;
 
+	if (_head == _tail) {
+		if (0 != separator) str_.push_back(separator);
+		return str_;
+	}
 	for (idx_ = _head; idx_ != nullptr; idx_ = idx_->GetNextNode()) {
 		if (idx_ == _cur && 0 != separator) str_.push_back(separator);
-		str_.push_back(idx_->GetData());
+		if (idx_ != _tail) str_.push_back(idx_->GetData());
 	}
 
 	return str_;
