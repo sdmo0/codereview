@@ -145,21 +145,37 @@ void TestTypingMachine() {
 }
 
 int main() {
-  puts("1: Test Node.");
-  puts("2: Test Typing Machine.");
-  while (true) {
-    int user_key = GetKeyInput();
-    if (user_key == '1') {
-      //TestNode();
-		NodeTest();
-      return 0;
-    }
-    if (user_key == '2') {
-      //TestTypingMachine();
-		TypingMachineTest();
-      return 0;
-    }
-  }
+
+	int valid_key = 0;
+
+	while (true) {
+		puts("1: Test Node.");
+		puts("2: Test Typing Machine.");
+		puts("3: Unittest for Node");
+		puts("4: Unittest for Typeing Machine");
+
+		int user_key = GetKeyInput();
+		switch (user_key) {
+		case '1': TestNode();
+			valid_key = 1;
+			break;
+		case '2': TestTypingMachine();
+			valid_key = 1;
+			break;
+		case '3': NodeTest();
+			puts("Node unittest finished!\n");
+			valid_key = 1;
+			break;
+		case '4': TypingMachineTest();
+			puts("TypingMachine unittest finished!\n");
+			valid_key = 1;
+			break;
+		default:
+			puts("Invalid Input\n");
+		}
+
+		if (valid_key) return 0;
+	}
 }
 
 
