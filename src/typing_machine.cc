@@ -4,8 +4,9 @@
 
 const int MAX_STRING = 100;
 
-TypingMachine::TypingMachine() {
-	_string_count = 0;
+TypingMachine::TypingMachine() :
+	_string_count(0)
+{
 	_cur = _head = _tail = new Node(' ');
 
 	return;
