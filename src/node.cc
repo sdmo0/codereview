@@ -2,10 +2,9 @@
 
 #include "node.h"
 
-Node::Node(char data) {
-	_data = data;
-	_previous = nullptr;
-	_next = nullptr;
+Node::Node(char data) :
+	_data(data), _previous(nullptr), _next(nullptr)
+{
 	return;
 }
 
