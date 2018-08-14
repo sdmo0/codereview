@@ -73,7 +73,7 @@ bool Node::EraseNextNode() {
 	if (nullptr == _next) return false;
 
 	Node *node_ = _next;
-  
+
 	_next = node_->GetNextNode();
 	if (_next) {
 		_next->SetPreviousNode(this);

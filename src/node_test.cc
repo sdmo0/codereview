@@ -10,36 +10,36 @@
 /*
 static char char_rand(void)
 {
-	int rand_num = 0;
-	do {
-		rand_num = rand();
-	} while (rand_num != 0);
+int rand_num = 0;
+do {
+rand_num = rand();
+} while (rand_num != 0);
 
-	return (rand_num > 0 ? rand_num % 0xff : (-rand_num) % 0xff);
+return (rand_num > 0 ? rand_num % 0xff : (-rand_num) % 0xff);
 }
 */
 
 class NodeConstructorTestSuite
 {
 private:
-  static void SingleNodeTest() {
-    Node *node = new Node('A');
-    ASSERT_EQ(node->GetData(), 'A');
-    delete node;
-  }
+	static void SingleNodeTest() {
+		Node *node = new Node('A');
+		ASSERT_EQ(node->GetData(), 'A');
+		delete node;
+	}
 
-  static void GetDataTest() {
-	  char temp = 0;
-	  Node *node = new Node(temp);
-	  ASSERT_EQ(node->GetData(), temp);
-	  delete node;
-  }
+	static void GetDataTest() {
+		char temp = 0;
+		Node *node = new Node(temp);
+		ASSERT_EQ(node->GetData(), temp);
+		delete node;
+	}
 
 public:
-  static void RunTest() {
-    SingleNodeTest();	
-	GetDataTest();
-  }
+	static void RunTest() {
+		SingleNodeTest();
+		GetDataTest();
+	}
 };
 
 class NodeMethodTestSuite
@@ -188,19 +188,19 @@ private:
 #endif //ORIGINAL_CODE
 
 public:
-  static void RunTest() {
-	  InsertPreviousNodeTest();
-	  InsertNextNodeTest();
-	  //GetPreviousNodeTest();
-	  //GetNextNodeTest();
-	  ErasePreviousNodeTest();
-	  EraseNextNodeTest();
+	static void RunTest() {
+		InsertPreviousNodeTest();
+		InsertNextNodeTest();
+		//GetPreviousNodeTest();
+		//GetNextNodeTest();
+		ErasePreviousNodeTest();
+		EraseNextNodeTest();
 
 #ifdef ORIGINAL_CODE
-	  SetNextNodeTest();
-	  SetPreviousNodeTest();
+		SetNextNodeTest();
+		SetPreviousNodeTest();
 #endif //ORIGINAL_CODE
-  }
+	}
 };
 
 void NodeTest() {

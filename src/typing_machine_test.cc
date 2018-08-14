@@ -119,15 +119,15 @@ private:
 
 
 public:
-  static void RunTest() {
-    BarSeparatorTest();
-	HomeKeyTest();
-	EndKeyTest();
-	LeftKeyTest();
-	RightKeyTest();
-	TypeKeyTest();
-	EraseKeyTest();
-  }
+	static void RunTest() {
+		BarSeparatorTest();
+		HomeKeyTest();
+		EndKeyTest();
+		LeftKeyTest();
+		RightKeyTest();
+		TypeKeyTest();
+		EraseKeyTest();
+	}
 };
 
 class SomeOtherTestSuite
@@ -135,12 +135,12 @@ class SomeOtherTestSuite
 private:
 
 public:
-  static void RunTest() {
-    // add more..
-  }
+	static void RunTest() {
+		// add more..
+	}
 };
 
 void TypingMachineTest() {
-  TmConstructorTestSuite::RunTest();
-  // add more..
+	TmConstructorTestSuite::RunTest();
+	// add more..
 }

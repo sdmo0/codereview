@@ -8,7 +8,7 @@
 #include "node.h"
 
 class TypingMachine {
-	public:
+public:
 	TypingMachine();
 	~TypingMachine();
 	void HomeKey();
@@ -19,7 +19,7 @@ class TypingMachine {
 	bool EraseKey();
 	std::string Print(char separator);
 
-	private:
+private:
 	Node *_head;
 	Node *_tail;
 	Node *_cur;
