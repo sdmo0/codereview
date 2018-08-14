@@ -3,8 +3,6 @@
 #ifndef NODE_H_
 #define NODE_H_
 
-#define ORIGINAL_CODE 1
-
 class Node {
 	public:
 	explicit Node(char data);
@@ -15,9 +13,6 @@ class Node {
 	Node* GetNextNode();
 	bool ErasePreviousNode();
 	bool EraseNextNode();
-
-	void SetNextNode(Node *next);
-	void SetPreviousNode(Node *prev);
   
 private:
 	char _data;

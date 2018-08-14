@@ -157,36 +157,6 @@ private:
 		delete node1;
 	}
 
-#ifdef ORIGINAL_CODE
-	static void SetNextNodeTest() {
-		char temp1 = char_rand();
-		Node *node1 = new Node(temp1);
-
-		char temp2 = char_rand();
-		Node *node2 = new Node(temp2);
-
-		node1->SetNextNode(node2);
-		ASSERT_TRUE(node1->GetNextNode() == node2);
-
-		delete node1;
-		delete node2;
-	}
-
-	static void SetPreviousNodeTest() {
-		char temp1 = char_rand();
-		Node *node1 = new Node(temp1);
-
-		char temp2 = char_rand();
-		Node *node2 = new Node(temp2);
-
-		node1->SetPreviousNode(node2);
-		ASSERT_TRUE(node1->GetPreviousNode() == node2);
-
-		delete node1;
-		delete node2;
-	}
-#endif //ORIGINAL_CODE
-
 public:
 	static void RunTest() {
 		InsertPreviousNodeTest();
@@ -195,11 +165,6 @@ public:
 		//GetNextNodeTest();
 		ErasePreviousNodeTest();
 		EraseNextNodeTest();
-
-#ifdef ORIGINAL_CODE
-		SetNextNodeTest();
-		SetPreviousNodeTest();
-#endif //ORIGINAL_CODE
 	}
 };
 
