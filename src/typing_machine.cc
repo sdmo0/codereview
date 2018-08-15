@@ -15,8 +15,8 @@ _string_count(0)
 TypingMachine::~TypingMachine() {
 	Node *idx_ = _head;
 
-	while (idx_ != nullptr && idx_->GetNextNode() != nullptr) {
-		idx_->EraseNextNode();
+	while (idx_ != nullptr && idx_->EraseNextNode()) {
+		; // do nothing
 	}
 
 	delete _head;
